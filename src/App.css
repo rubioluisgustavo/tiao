@@ -1,38 +1,100 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  background-image: url("../src/fundo.png");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.container {
+  max-width: 1000px;
+  padding: 0 20px;
+  margin: 20px auto;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+h1.title {
+  color: #b14700;
+  font-size: 10vh;
+  text-shadow: 3px 3px 3px black;
+  margin: 30px;
+}
+
+h2.title {
+  color: #000000;
+  margin: 30px 0;
+}
+
+h2.title:hover {
+  font-size: 32px;
+  transition: all 1s;
+}
+
+.albums-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+}
+
+.album-card {
   display: flex;
   flex-direction: column;
+  padding: 10px 10px 15px;
+  border-radius: 20px;
+  border: 2px solid #f6f8fb;
+  background-color: white;
+}
+
+.album-card p.album-title {
+  color: #363636;
+  font-weight: bold;
+}
+
+.tracks {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid #f6f8fb;
+  background-color: white;
+  padding: 15px;
+  border-radius: 20px;
+}
+
+.tracks .track-wrapper {
+  display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-between;
+  padding: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+.tracks .track-wrapper:not(:last-child) {
+  margin-bottom: 5px;
+  border-bottom: 2px dashed #f6f8fb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.tracks .track-wrapper .track-details {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.tracks .track-wrapper .track-details .track-number {
+  font-weight: 900;
+  color: #363636;
+  margin-right: 20px;
+}
+
+.tracks .track-wrapper .track-details .track {
+  display: flex;
+  flex-direction: column;
+}
+
+.tracks .track-wrapper .track-details .track .name {
+  font-weight: bold;
+  color: #363636;
 }
