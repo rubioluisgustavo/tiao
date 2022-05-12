@@ -17,11 +17,22 @@ function App() {
   };
 
   const deleteAlbum = ((id) => {
-    // axios.delete(`${url}/${id}`, configs).then((response) => {
-    //   alert(response.data);
-    // })
+    axios.delete(`${url}/${id}`, configs).then((response) => {
+      alert(response.data);
+    })
+  })
+
+  const createAlbum = ((id) => {
     axios.post(url, configs, { name: "As melhores", year: "1949" }).then((response) => {
       console.log(response);
+    }).catch((error) => {
+      console.log(error);
+    })
+  })
+
+  const searchAlbum = ((id) => {
+    axios.get(url, configs).then((response) => {
+      setAlbums(response.data.data);
     }).catch((error) => {
       console.log(error);
     })
@@ -34,23 +45,21 @@ function App() {
   }, [])
 
   return (
-    <>
-      <div className="App">
-        {albums.map((item) => {
-          return (
-            <div key={item.id}>
-              <p>
-                {item.name}
-              </p>
-              <span>
-                {item.year}
-              </span>
-              <button type='button' onClick={() => deleteAlbum(item.id)}>Excluir</button>
-            </div>
-          );
-        })}
-      </div>
-    </>
+    <div className="App">
+      {albums.map((item) => {
+        return (
+          <div key={item.id}>
+            <p>
+              {item.name}
+            </p>
+            <span>
+              {item.year}
+            </span>
+            <button type='button' onClick={() => deleteAlbum(item.id)}>Excluir</button>
+          </div>
+        );
+      })}
+    </div>
   );
 }
 
