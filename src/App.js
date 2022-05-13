@@ -4,7 +4,7 @@ import axios from 'axios';
 
 function App() {
   const [albums, setAlbums] = useState([]);
-  const albumdata = { name: "Luis Rubio album 2 AXIOS", year: "1996" };
+  // const albumdata = { name: "Luis Rubio album 2 AXIOS", year: "1996" };
   const token = 'rubioluisgustavo@gmail.com';
   const url = 'https://tiao.supliu.com.br/api/album';
 
@@ -16,19 +16,19 @@ function App() {
   };
 
   const searchAlbum = ((value) => {
-    axios.get(`https://tiao.supliu.com.br/api/album?keyword=${value}&limit=1000&page=1`, configs).then((response) => {
-      setAlbums(response.data.data);
-    })
-    console.log(value);
+      const urlbuscaralbum = `https://tiao.supliu.com.br/api/album?keyword=${value}&limit=1000&page=1`;
+      axios.get(urlbuscaralbum, configs).then((response) => {
+        setAlbums(response.data.data);
+      })
   })
 
-  const createAlbum = (() => {
-    axios.post(url, albumdata, configs).then((response) => {
-      alert("Álbum cadastrado com sucesso!")
-    }).catch((error) => {
-      alert("Erro ao cadastrar!");
-    })
-  })
+  // const createAlbum = (() => {
+  //   axios.post(url, albumdata, configs).then((response) => {
+  //     alert("Álbum cadastrado com sucesso!")
+  //   }).catch((error) => {
+  //     alert("Erro ao cadastrar!");
+  //   })
+  // })
 
   const deleteAlbum = ((id) => {
     axios.delete(`${url}/${id}`, configs).then((response) => {
