@@ -13,11 +13,10 @@ export const App = () => {
   const [numberTrack, setNumberTrack] = useState("");
   const [durationTrack, setDurationTrack] = useState("");
 
-  //HEADERS 
+  //CONFIGS 
   const token = "rubioluisgustavo@gmail.com";
   const url = "https://tiao.supliu.com.br/api/album";
   const urlTrack = "https://tiao.supliu.com.br/api/track";
-
   const configs = {
     headers: {
       "Content-type": "application/json",
@@ -102,35 +101,15 @@ export const App = () => {
   return (
     <div className="App">
       <main className="container">
-        <h1 className="title">Tião Carreiro & Pardinho</h1>
+        <h1 className="title">Tião Carreiro e Pardinho - Discografia</h1>
         <div>
           <h2 className="title">Buscar Álbum</h2>
-          <input
-            type="text"
-            placeholder="Nome do Álbum"
-            onChange={(e) => searchAlbum(e.target.value)}
-          />
-
+          <input type="text" placeholder="Nome do Álbum" onChange={(e) => searchAlbum(e.target.value)} />
           <div>
             <h2 className="title">Cadastrar Álbum</h2>
-            <input
-              onChange={(e) => setNameAlbum(e.target.value)}
-              placeholder="Nome do Álbum"
-            />
-            <input
-              onChange={(e) => setYearAlbum(e.target.value)}
-              style={{ marginLeft: 20 }}
-              placeholder="Ano (4 dígitos)"
-            />
-            <button
-              type="button"
-              className="create"
-              onClick={() => {
-                createAlbum();
-              }}
-            >
-              Criar
-            </button>
+            <input onChange={(e) => setNameAlbum(e.target.value)} placeholder="Nome do Álbum" />
+            <input onChange={(e) => setYearAlbum(e.target.value)} style={{ marginLeft: 20 }} placeholder="Ano (4 dígitos)" />
+            <button type="button" className="create" onClick={() => { createAlbum(); }}>Criar</button>
           </div>
         </div>
 
@@ -138,44 +117,22 @@ export const App = () => {
         <div className="albums-grid">
           {albums.map((item) => {
             return (
+              
               <div key={item.id} className="album-card">
                 <div className="nome-album">
                   <div className="d-flex flex-column">
                     <p className="album-title">{item.name}</p>
                     <span className="album-year">{item.year}</span>
                   </div>
-                  <button
-                    type="button"
-                    className="remove"
-                    onClick={() => deleteAlbum(item.id)}
-                  >
-                    Excluir Álbum
-                  </button>
+                  <button type="button" className="remove" onClick={() => deleteAlbum(item.id)}>Excluir Álbum</button>
                 </div>
 
                 <div>
                   <h2 className="title">Cadastrar Faixa</h2>
-                  <input
-                    onChange={(e) => setNameTrack(e.target.value)}
-                    placeholder="Nome da faixa"
-                  />
-                  <input
-                    onChange={(e) => setNumberTrack(e.target.value)}
-                    placeholder="Número da faixa"
-                  />
-                  <input
-                    onChange={(e) => setDurationTrack(e.target.value)}
-                    placeholder="Duração da faixa"
-                  />
-                  <button
-                    type="button"
-                    className="create"
-                    onClick={() => {
-                      createTrack(item.id);
-                    }}
-                  >
-                    Criar
-                  </button>
+                  <input onChange={(e) => setNameTrack(e.target.value)} placeholder="Nome da faixa" />
+                  <input onChange={(e) => setNumberTrack(e.target.value)} placeholder="Número da faixa" />
+                  <input onChange={(e) => setDurationTrack(e.target.value)} placeholder="Duração da faixa" />
+                  <button type="button" className="create" onClick={() => { createTrack(item.id); }}>Criar</button>
                 </div>
 
                 <div>
@@ -195,13 +152,7 @@ export const App = () => {
                               <span className="title">{track.title}</span>
                             </div>
                             <div><span className="duration">{track.duration}</span>
-                              <button
-                                type="button"
-                                className="remove"
-                                onClick={() => deleteTrack(track.id)}
-                              >
-                                Excluir Faixa
-                              </button>
+                              <button type="button" className="remove" onClick={() => deleteTrack(track.id)}>Excluir Faixa</button>
                             </div>
                           </li>
                         </>

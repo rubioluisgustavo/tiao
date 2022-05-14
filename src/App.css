@@ -5,6 +5,12 @@
   font-family: "Poppins", sans-serif;
 }
 
+h1{
+  color: brown;
+  font-size: 10vh;
+  text-shadow: 2px 2px 3px black;
+}
+
 body{
   background-image: url("../src/fundo.png");
   background-repeat: no-repeat;
