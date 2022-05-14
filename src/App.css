@@ -5,16 +5,23 @@
   font-family: "Poppins", sans-serif;
 }
 
-h1{
-  color: brown;
-  font-size: 10vh;
-  text-shadow: 2px 2px 3px black;
-}
-
 body{
-  background-image: url("../src/fundo.png");
+  background-image: url("../src/fundo.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.criarfaixa {
+  text-align: right;
+  padding-top: 10px;
+}
+
+h1 {
+  color: brown;
+  font-size: 7vh;
+  text-align: center;
+  border-radius: 20px;
+  text-shadow: 2px 2px 3px rgb(146, 0, 0);
 }
 
 .container {
@@ -24,8 +31,18 @@ body{
 }
 
 h2.title {
-  color: #3f4e75;
+  color: white;
+  text-shadow: 3px 1px 2px rgb(0, 0, 0);
+  text-align: center;
   margin: 30px 0;
+}
+
+button:hover {
+  background: #ffffff;
+  transform: translateY(-7px);
+  color: #fff;
+  transition: all 0.3s;
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.445);
 }
 
 .albums-grid {
@@ -39,10 +56,13 @@ h2.title {
   flex-direction: column;
   padding: 15px;
   border-radius: 10px;
-  background-color: white;
-  border: 1px solid rgb(104, 104, 104);
-  box-shadow: 3px 3px 3px rgb(104, 104, 104);
+  background-color: rgb(200, 200, 200);
   position: relative;
+}
+
+
+input {
+  width: 80vh;
 }
 
 .album-card .header {
@@ -51,7 +71,7 @@ h2.title {
 }
 
 .album-card p.album-title {
-  color: #3f4e75;
+  color: black;
   font-weight: bold;
 }
 
@@ -118,10 +138,11 @@ input {
   padding: 5px 15px;
   border-radius: 10px;
   height: 50px;
+  caret-color: brown;
 }
 
 button:hover {
-  opacity: 0.8;
+  border: 10px;
 }
 
 button.create {
@@ -135,7 +156,7 @@ button.create {
   height: 50px;
   width: 100px;
   background: #7de7ff;
-  color: #021f26;
+  color: #1d6c00;
   font-weight: bold;
   cursor: pointer;
 }
@@ -150,21 +171,21 @@ button.remove {
   height: 50px;
   width: 150px;
   background: #ff7d7d;
-  color: #021f26;
+  color: #ff0000;
   font-weight: bold;
   cursor: pointer;
 }
 
-.nome-album{
+.nome-album {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
 }
 
-.d-flex{
+.d-flex {
   display: flex;
 }
 
-.flex-column{
+.flex-column {
   flex-direction: column;
 }
